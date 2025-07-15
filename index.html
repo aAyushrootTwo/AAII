@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Blog Generator</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>AI Blog Post Generator</h1>
+    <form action="/generate" method="post">
+      <label for="topic">Enter Blog Topic:</label>
+      <input type="text" id="topic" name="topic" required>
+      <button type="submit">Generate</button>
+    </form>
+
+    {% if blog %}
+    <div class="output">
+      <h2>Generated Blog Post</h2>
+      <p>{{ blog|safe }}</p>
+    </div>
+    {% endif %}
+  </div>
+</body>
+</html>
